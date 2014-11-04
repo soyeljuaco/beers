@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Your awesome title</title>
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://influit.co/beers/">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="css/styles.css" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+    <!-- script references -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function () {
+
+    var navListItems = $('div.setup-panel div a'),
+            allWells = $('.setup-content'),
+            allNextBtn = $('.nextBtn');
+
+    allWells.hide();
+
+    navListItems.click(function (e) {
+        e.preventDefault();
+        var $target = $($(this).attr('href')),
+                $item = $(this);
+
+        if (!$item.hasClass('disabled')) {
+            navListItems.removeClass('btn-primary').addClass('btn-default');
+            $item.addClass('btn-primary');
+            allWells.hide();
+            $target.show();
+            $target.find('input:eq(0)').focus();
+        }
+    });
+
+    allNextBtn.click(function(){
+        var curStep = $(this).closest(".setup-content"),
+            curStepBtn = curStep.attr("id"),
+            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
+            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            isValid = true;
+
+        $(".form-group").removeClass("has-error");
+        for(var i=0; i<curInputs.length; i++){
+            if (!curInputs[i].validity.valid){
+                isValid = false;
+                $(curInputs[i]).closest(".form-group").addClass("has-error");
+            }
+        }
+
+        if (isValid)
+            nextStepWizard.removeAttr('disabled').trigger('click');
+    });
+
+    $('div.setup-panel div a.btn-primary').trigger('click');
+});
+    </script>
+</head>
+
+
+  <body>
+
+    <header>
+	<div class="cover-home">
+	  <nav class="navbar navbar-default" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-center navbar-brand" href="#"><a class="navbar-brand">Brand Company</a></div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="#">Our Beers</a></li>
+            <li><a href="#">Buy a Gift</a></li>
+            <li><a href="#">Office Deliveries</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Help</a></li>
+            <li><a href="/login/">Login</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+ </nav>
+
+      <div class="container">
+	      <div class="col-lg-6 v-center">
+	        <h1>DRINK BETTER BEERS</h1>
+	         <p>Power your fitness and outdoor applications with terrain maps that highlight thousands of biking, hiking and running trails.</p>
+	         <a href="/subscription/" class="btn btn-outline btn-lg">Subscribe now</a>
+	      </div>
+      </div>
+    </div>
+</header>
+
+
+        	<div class="container features clearfix">
+        <div class="col-lg-3">
+          <img alt="consumers" class="ico" src="img/ico1.png" width="56" height="62">
+          <h5>Easy Subscription</h5>
+          <p>Customers can book online 24/7—wherever they are—and select the service, staff member, and time that works for them.</p>
+        </div>
+        <div class="col-lg-3">
+          <img alt="consumers" class="ico" src="img/ico1.png" width="56" height="62">
+          <h5>12 World-Class Beers</h5>
+          <p>Customers can book online 24/7—wherever they are—and select the service, staff member, and time that works for them.</p>
+        </div>
+        <div class="col-lg-3">
+          <img alt="consumers" class="ico" src="img/ico1.png" width="56" height="62">
+          <h5>Drink Together</h5>
+          <p>Customers can book online 24/7—wherever they are—and select the service, staff member, and time that works for them.</p>
+        </div>
+        <div class="col-lg-3">
+          <img alt="consumers" class="ico" src="img/ico1.png" width="56" height="62">
+          <h5>Fast Delivery</h5>
+          <p>Customers can book online 24/7—wherever they are—and select the service, staff member, and time that works for them.</p>
+        </div>
+</div>
+		<div class="container pricing">
+    	<div class="row title"><h1>Subscription Pricing<h1></div>
+    	<div class="col-md-6 left">
+    		<h4><strong>Monthly</strong> for happiness, for friends!</h4>
+    		<span class="money">$</span>
+    		<span class="price">13.290</span>
+    		<span class="clp">/por month</span>
+    		<p>6 Beers compatible with all Avery name badge kits Optionally customize to fit any paper format</p>
+    	</div>
+    	<div class="col-md-6 right">
+    		<h4><strong>Yearly</strong>, 20% off the best for you.</h4>
+    		<span class="money">$</span>
+    		<span class="price">76.590</span>
+    		<span class="clp">/por year</span>
+    		<p>6 beers for compatible with all Avery name badge kits Optionally customize to fit any paper format</p>
+    	</div>
+	</div>
+	<div class="container call">
+		<a href="/subscription" class="btn btn-outline btn-lg">Explore the proccess</a>
+		<p>We showcase dozens of inspiring projects built with Bootstrap on the Bootstrap Expo.</p>
+	</div>
+
+	  <div class="container delivery">
+		<img src="img/boxes.jpg" class="img-responsive" alt="boxes for delivery" with="" alt="">
+		<h3>Our delivery</h3>
+		<p class="descriptions">Runkeeper helps millions of runners explore new trails with a route planning feature that incorporates a detailed terrain map with elevation data.</p>
+  </div>
+		<section id="Discover" class="container">
+   		<div class="cell col-md-6">
+			<div class="col-md-12 quote">In a survey of our customers, 85% are extremely likely to recommend Square Capital.</div>
+			<div class="col-xs-6 col-md-6 testimonial1"><img src="img/testimonial2.2x.jpg"></img></div>
+			<div class="col-xs-6 col-md-6 testimonial2"><img src="img/testimonial3.2x.jpg"></img></div>
+   		</div>
+   		<div class="col-md-6"><img src="img/testimonial1.2x.jpg"></img></div>
+    </section>
+
+
+    <footer>
+	<div class="container footer">
+			<p>© 20014–2015 Beers, Ltda. | Términos y condiciones | Privacidad</p>
+	</div>
+</footer>
+
+
+  </body>
+
+</html>
